@@ -29,7 +29,7 @@ data "aws_iam_policy_document" "eventbridge_read_policy" {
 
 resource "aws_iam_policy" "eventbridge_read_policy" {
   name   = "${var.iam_policy_name}-${var.env}"
-  policy = data.aws_iam_policy_document.policy.json
+  policy = data.aws_iam_policy_document.eventbridge_read_policy.json
 }
 
 resource "aws_iam_role_policy_attachment" "this" {
